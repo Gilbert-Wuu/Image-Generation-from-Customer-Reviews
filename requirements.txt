@@ -1,0 +1,29 @@
+# Core ML & Data Libraries
+torch
+transformers
+pandas
+numpy
+scikit-learn
+
+# LLM & Vector DB Libraries
+openai
+langchain
+langchain-openai
+llama-index
+pinecone-client
+faiss-cpu
+sentence-transformers
+python-dotenv
+
+# Jupyter & Utility Libraries
+ipykernel
+jupyter
+tqdm
+datasets
+huggingface_hub
+diffusers
+Pillow
+PyMuPDF
+pypdf
+ipywidgets
+requests
