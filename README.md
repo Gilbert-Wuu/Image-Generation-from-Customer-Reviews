@@ -1,6 +1,6 @@
 # Image Generation from Customer Reviews 
 
-This project leverages prompt engineering and Retrieval-Augmented Generation (RAG) to summarize product descriptions and customer reviews. The refined prompts are then used with diffusion models (Stable Diffusion & DALL-E) to generate product images, which can be compared against actual product images.
+This project leverages **prompt engineering** and **Retrieval-Augmented Generation (RAG)** to summarize product descriptions and customer reviews. The refined prompts are then used with diffusion models (Stable Diffusion & DALL-E) to generate product images, which can be compared against actual product images.
 
 ## Project Overview
 
