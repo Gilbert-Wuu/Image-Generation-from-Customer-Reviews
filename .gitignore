@@ -1,0 +1,5 @@
+# macOS folder attributes
+.DS_Store
+
+# Environment variables
+.env
