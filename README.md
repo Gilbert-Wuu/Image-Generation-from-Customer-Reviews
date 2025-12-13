@@ -18,7 +18,7 @@ Here is a side-by-side comparison of the images generated from the same customer
 
 | Stable Diffusion 2.1 | DALL-E 3 |
 | :---: | :---: |
-| | |
+| <image src="images/mesh chair_dalle_1.png"> | <image src="images/mesh chair_sd_1.png"> |
 
 ## 🛠️ Key Technologies
 
