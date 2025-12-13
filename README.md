@@ -4,12 +4,30 @@ This project leverages **prompt engineering** and **Retrieval-Augmented Generati
 
 ## Project Overview
 
-The workflow is divided into two main parts:
+The entire end-to-end process is contained within a single, executable Jupyter Notebook: `Agentic_Product_Image_Generator.ipynb`.
 
-1.  **Prompt Generation (`RAGandPromptGenerationCode.ipynb`)**: This notebook processes a PDF of product reviews, chunks the text, and uses a RAG pipeline with OpenAI's GPT-4 and Pinecone as the vector database to generate concise, descriptive prompts.
-2.  **Image Generation (`Image_Generation_from_Prompt.ipynb`)**: The generated prompts are fed into Stable Diffusion and DALL-E to create realistic product images from the summarized text.
+1.  **Agentic Prompt Engineering:** Uses OpenAI's GPT models (e.g., GPT-3.5-turbo) to process raw product descriptions and customer reviews, extracting key features and positive sentiment.
+2.  **Multimodal Generation:** The refined prompt is simultaneously fed into two different image generation systems for comparison:
+    * **Stable Diffusion 2.1 Base** (via Hugging Face Diffusers)
+    * **DALL-E 3** (via OpenAI API)
+3.  **RAG Capability:** The Agent is structured to optionally incorporate a Retrieval-Augmented Generation (RAG) system (using Pinecone/LlamaIndex) to fetch information from large, unstructured review documents (like PDFs), ensuring the generated prompt is comprehensive.
 
-## 🚀 Getting Started
+## 🚀 Generated Image Demo
+
+Here is a side-by-side comparison of the images generated from the same customer-review-driven prompt, demonstrating the different styles of Stable Diffusion and DALL-E 3.
+
+| Stable Diffusion 2.1 | DALL-E 3 |
+| :---: | :---: |
+| | |
+
+## 🛠️ Key Technologies
+
+* **Image Generation**: Stable Diffusion 2.1 (Diffusers), DALL-E 3 (OpenAI)
+* **Prompt Engineering**: OpenAI GPT-3.5-Turbo
+* **Vector Database (Optional RAG)**: Pinecone, LlamaIndex
+* **Frameworks**: PyTorch, Diffusers, Hugging Face Hub
+
+## 💻 Getting Started
 
 ### 1. Clone the Repository
 
@@ -43,16 +61,13 @@ PINECONE_API_KEY="your_pinecone_api_key"
 HF_KEY="your_huggingface_api_key"
 ```
 
-### 4. Run the Notebooks in VS Code
+### 4. Run the Project
 
-1.  Open the `IMAGE GEN FROM REVIEWS` folder in Visual Studio Code.
-2.  Make sure you select the Python interpreter from your virtual environment (`venv`).
-3.  Open `RAGandPromptGenerationCode.ipynb` and run the cells sequentially to process the data and generate prompts.
-4.  Open `Image_Generation_from_Prompt.ipynb` and run the cells to generate images based on the prompts. Generated images will be saved in the `output/` directory.
+1.  Open the `Agentic_Product_Image_Generator.ipynb` file in Google Colab (recommended for GPU access) or VS Code.
+2.  Select a GPU Runtime (e.g., T4, L4, or A100 in Colab).
+3.  Run all cells sequentially. The Agent will:
+    - Initialize LLMs and Diffusion Models.
 
-## 🛠️ Key Technologies
+    - Generate a descriptive prompt from the embedded product data.
 
-* **Language Models**: OpenAI GPT-4, DALL-E 3
-* **Image Generation**: Stable Diffusion
-* **Vector Database**: Pinecone
-* **Frameworks**: LangChain, LlamaIndex, PyTorch, Diffusers
+    - Call both Stable Diffusion and DALL-E 3 to generate and save the final images.
